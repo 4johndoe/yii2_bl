@@ -38,8 +38,21 @@ class m180926_192910_create_comment_table extends Migration
         );
 
         // create index for column 'article_id'
+        $this->createIndex(
+            'idx_article_id',
+            'comment',
+            'article_id'
+        );
 
         // add foreign key for table 'article'
+        $this->addForeignKey(
+            'fk-article_id',
+            'comment',
+            'article_id',
+            'article',
+            'id',
+            'CASCADE'
+        );
     }
 
     /**
