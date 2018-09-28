@@ -66,6 +66,14 @@ class ArticleController extends Controller
     {
         $model = new Article();
 
+        if($_POST['Article'])
+        {
+//            var_dump($_POST['Article']);
+//            var_dump(Yii::$app->request->post());die;
+            $model->title = $_POST['Article']['title'];
+            var_dump($model->title);die;
+        }
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
