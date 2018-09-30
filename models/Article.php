@@ -71,9 +71,15 @@ class Article extends \yii\db\ActiveRecord
         return $this->save(false);
     }
 
+    public function getImage()
+    {
+        return ($this->image) ? '/uploads/' . $this->image : '/no-image.png';
+    }
+
     public function deleteImage()
     {
         $imageUploadModel = new ImageUpload();
+
         $imageUploadModel->deleteCurrentImage($this->image);
     }
 
