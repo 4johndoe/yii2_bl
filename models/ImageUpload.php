@@ -17,19 +17,35 @@ class ImageUpload extends Model
 {
     public $image;
 
+    public function rules()
+    {
+        return [
+            [['image'], 'required'],
+            [['image'], 'file', 'extensions' => 'jpg,jpeg,png']
+        ];
+    }
+
     public function uploadFile(UploadedFile $file, $currentImage)
     {
         $this->image = $file;
 
-        if (file_exists(Yii::getAlias('@web') . 'uploads/' . $currentImage))
-            unlink(Yii::getAlias('@web') . 'uploads/' . $currentImage);
+        if ($this->validate())
+        {
+            if (file_exists($this->getFolder() . $currentImage))
+            {
+                unlink($this->getFolder() . $currentImage);
+            }
 
-        $filename = strtolower(md5(uniqid($file->baseName)) . '.' . $file->extension);
+            $filename = strtolower(md5(uniqid($file->baseName)) . '.' . $file->extension);
 
-        $file->saveAs(Yii::getAlias('@web') . 'uploads/' . $filename);
+            $file->saveAs($this->getFolder() . $filename);
 
-        return $filename;
+            return $filename;
+        }
     }
 
-
+    public function getFolder()
+    {
+        return Yii::getAlias('@web') . 'uploads/';
+    }
 }
