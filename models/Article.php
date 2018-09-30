@@ -64,19 +64,10 @@ class Article extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getArticleTags()
+    public function saveImage($filename)
     {
-        return $this->hasMany(ArticleTag::className(), ['article_id' => 'id']);
-    }
+        $this->image = $filename;
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getComments()
-    {
-        return $this->hasMany(Comment::className(), ['article_id' => 'id']);
+        return $this->save(false);
     }
 }
