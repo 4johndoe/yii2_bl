@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\Category;
 use app\models\ImageUpload;
 use Yii;
 use app\models\Article;
@@ -144,5 +145,19 @@ class ArticleController extends Controller
         }
 
         return $this->render('image', ['model' => $model]);
+    }
+
+    public function actionSetCategory($id)
+    {
+        $article = $this->findModel($id);
+        $selectedCategory = $article->category->id;
+        $categories = Category::find()->all();
+        var_dump($categories);die;
+
+        return $this->render('category', [
+            'article' => $article,
+            'selectedCategory' => $selectedCategory,
+            'categories' => $categories
+        ]);
     }
 }
