@@ -31,21 +31,41 @@ class ImageUpload extends Model
 
         if ($this->validate())
         {
-            if (file_exists($this->getFolder() . $currentImage))
-            {
-                unlink($this->getFolder() . $currentImage);
-            }
+            $this->deleteCurrentImage($currentImage);
 
-            $filename = strtolower(md5(uniqid($file->baseName)) . '.' . $file->extension);
-
-            $file->saveAs($this->getFolder() . $filename);
-
-            return $filename;
+            return $this->saveImage();
         }
     }
 
-    public function getFolder()
+    private function getFolder()
     {
         return Yii::getAlias('@web') . 'uploads/';
+    }
+
+    private function generateFilename()
+    {
+        return strtolower(md5(uniqid($this->image->baseName)) . '.' . $this->image->extension);
+    }
+
+    private function deleteCurrentImage($currentImage)
+    {
+        if ($this->fileExists($currentImage))
+        {
+            unlink($this->getFolder() . $currentImage);
+        }
+    }
+
+    private function fileExists($currentImage)
+    {
+        return file_exists($this->getFolder() . $currentImage);
+    }
+
+    private function saveImage()
+    {
+        $filename = $this->generateFilename();
+
+        $this->image->saveAs($this->getFolder() . $filename);
+
+        return $filename;
     }
 }
