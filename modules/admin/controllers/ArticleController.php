@@ -150,14 +150,6 @@ class ArticleController extends Controller
     public function actionSetCategory($id)
     {
         $article = $this->findModel($id);
-        $selectedCategory = $article->category->id;
-        $categories = Category::find()->all();
-        var_dump($categories);die;
-
-        return $this->render('category', [
-            'article' => $article,
-            'selectedCategory' => $selectedCategory,
-            'categories' => $categories
-        ]);
+        var_dump($article->category->title);
     }
 }
