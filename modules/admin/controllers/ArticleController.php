@@ -7,6 +7,7 @@ use app\models\ImageUpload;
 use Yii;
 use app\models\Article;
 use app\models\ArticleSearch;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -150,9 +151,19 @@ class ArticleController extends Controller
     public function actionSetCategory($id)
     {
         $article = $this->findModel($id);
+
         $selectedCategory = $article->category->id;
-        $categories = Category::find()->all();
-        var_dump($categories);die;
+
+        $categories = ArrayHelper::map(Category::find()->all(), 'id', 'title');
+
+        if (Yii::$app->request->isPost)
+        {
+            $category = Yii::$app->request->post('category');
+            if ($article->saveCategory($category))
+            {
+                return $this->redirect(['view', 'id' => $article->id]);
+            }
+        }
 
         return $this->render('category', [
             'article' => $article,
