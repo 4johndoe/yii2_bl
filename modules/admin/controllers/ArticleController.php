@@ -165,6 +165,7 @@ class ArticleController extends Controller
             }
         }
 
+
         return $this->render('category', [
             'article' => $article,
             'selectedCategory' => $selectedCategory,
