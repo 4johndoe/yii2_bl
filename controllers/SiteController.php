@@ -65,7 +65,7 @@ class SiteController extends Controller
     {
         $query = Article::find();
         $countQuery = clone $query;
-        $pagination = new Pagination(['totalCount' => $countQuery->count(), 'pageSize'=>1]);
+        $pagination = new Pagination(['totalCount' => $countQuery->count(), 'pageSize'=>4]);
         $articles = $query->offset($pagination->offset)
             ->limit($pagination->limit)
             ->all();
