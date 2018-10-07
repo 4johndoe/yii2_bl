@@ -1,11 +1,15 @@
+<?php
+use yii\widgets\LinkPager;
+?>
 <!--main content start-->
 <div class="main-content">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
+                <?php foreach($articles as $article): ?>
                 <article class="post">
                     <div class="post-thumb">
-                        <a href="blog.html"><img src="/public/images/blog-1.jpg" alt=""></a>
+                        <a href="blog.html"><img src="<?= $article->getImage(); ?>" alt=""></a>
 
                         <a href="blog.html" class="post-thumb-overlay text-center">
                             <div class="text-uppercase text-center">View Post</div>
@@ -39,14 +43,14 @@
                         </div>
                     </div>
                 </article>
-                
-                <ul class="pagination">
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                </ul>
+                <?php endforeach; ?>
+
+                <?php
+                    // display pagination
+                    echo LinkPager::widget([
+                        'pagination' => $pagination,
+                    ]);
+                ?>
             </div>
             <div class="col-md-4" data-sticky_column>
                 <div class="primary-sidebar">
