@@ -39,7 +39,7 @@ PublicAsset::register($this);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.jpg" alt=""></a>
+                <a class="navbar-brand" href="index.html"><img src="/public/images/logo.jpg" alt=""></a>
             </div>
 
 
@@ -72,7 +72,7 @@ PublicAsset::register($this);
             <div class="col-md-8">
                 <article class="post">
                     <div class="post-thumb">
-                        <a href="blog.html"><img src="assets/images/blog-1.jpg" alt=""></a>
+                        <a href="blog.html"><img src="/public/images/blog-1.jpg" alt=""></a>
 
                         <a href="blog.html" class="post-thumb-overlay text-center">
                             <div class="text-uppercase text-center">View Post</div>
@@ -108,7 +108,7 @@ PublicAsset::register($this);
                 </article>
                 <article class="post">
                     <div class="post-thumb">
-                        <a href="blog.html"><img src="assets/images/abc.jpg" alt=""></a>
+                        <a href="blog.html"><img src="/public/images/abc.jpg" alt=""></a>
 
                         <a href="blog.html" class="post-thumb-overlay text-center">
                             <div class="text-uppercase text-center">View Post</div>
@@ -144,7 +144,7 @@ PublicAsset::register($this);
                 </article>
                 <article class="post">
                     <div class="post-thumb">
-                        <a href="blog.html"><img src="assets/images/blog-2.jpg" alt=""></a>
+                        <a href="blog.html"><img src="/public/assets/images/blog-2.jpg" alt=""></a>
 
                         <a href="blog.html" class="post-thumb-overlay text-center">
                             <div class="text-uppercase text-center">View Post</div>
@@ -180,7 +180,7 @@ PublicAsset::register($this);
                 </article>
                 <article class="post">
                     <div class="post-thumb">
-                        <a href="blog.html"><img src="assets/images/blog-3.jpg" alt=""></a>
+                        <a href="blog.html"><img src="/public/images/blog-3.jpg" alt=""></a>
 
                         <a href="blog.html" class="post-thumb-overlay text-center">
                             <div class="text-uppercase text-center">View Post</div>
@@ -217,7 +217,7 @@ PublicAsset::register($this);
 
                 <article class="post">
                     <div class="post-thumb">
-                        <a href="blog.html"><img src="assets/images/blog-4.jpg" alt=""></a>
+                        <a href="blog.html"><img src="/public/images/blog-4.jpg" alt=""></a>
 
                         <a href="blog.html" class="post-thumb-overlay text-center">
                             <div class="text-uppercase text-center">View Post</div>
@@ -268,7 +268,7 @@ PublicAsset::register($this);
                         <div class="popular-post">
 
 
-                            <a href="#" class="popular-img"><img src="assets/images/p1.jpg" alt="">
+                            <a href="#" class="popular-img"><img src="/public/images/p1.jpg" alt="">
 
                                 <div class="p-overlay"></div>
                             </a>
@@ -281,7 +281,7 @@ PublicAsset::register($this);
                         </div>
                         <div class="popular-post">
 
-                            <a href="#" class="popular-img"><img src="assets/images/p1.jpg" alt="">
+                            <a href="#" class="popular-img"><img src="/public/images/p1.jpg" alt="">
 
                                 <div class="p-overlay"></div>
                             </a>
@@ -294,7 +294,7 @@ PublicAsset::register($this);
                         <div class="popular-post">
 
 
-                            <a href="#" class="popular-img"><img src="assets/images/p1.jpg" alt="">
+                            <a href="#" class="popular-img"><img src="/public/images/p1.jpg" alt="">
 
                                 <div class="p-overlay"></div>
                             </a>
@@ -313,7 +313,7 @@ PublicAsset::register($this);
 
                             <div class="media">
                                 <div class="media-left">
-                                    <a href="#" class="popular-img"><img src="assets/images/r-p.jpg" alt="">
+                                    <a href="#" class="popular-img"><img src="/public/images/r-p.jpg" alt="">
                                         <div class="p-overlay"></div>
                                     </a>
                                 </div>
@@ -328,7 +328,7 @@ PublicAsset::register($this);
 
                             <div class="media">
                                 <div class="media-left">
-                                    <a href="#" class="popular-img"><img src="assets/images/r-p.jpg" alt="">
+                                    <a href="#" class="popular-img"><img src="/public/images/r-p.jpg" alt="">
                                         <div class="p-overlay"></div>
                                     </a>
                                 </div>
@@ -343,7 +343,7 @@ PublicAsset::register($this);
 
                             <div class="media">
                                 <div class="media-left">
-                                    <a href="#" class="popular-img"><img src="assets/images/r-p.jpg" alt="">
+                                    <a href="#" class="popular-img"><img src="/public/images/r-p.jpg" alt="">
                                         <div class="p-overlay"></div>
                                     </a>
                                 </div>
@@ -358,7 +358,7 @@ PublicAsset::register($this);
 
                             <div class="media">
                                 <div class="media-left">
-                                    <a href="#" class="popular-img"><img src="assets/images/r-p.jpg" alt="">
+                                    <a href="#" class="popular-img"><img src="/public/images/r-p.jpg" alt="">
                                         <div class="p-overlay"></div>
                                     </a>
                                 </div>
@@ -412,7 +412,7 @@ PublicAsset::register($this);
         <div class="row">
             <div class="col-md-4">
                 <aside class="footer-widget">
-                    <div class="about-img"><img src="assets/images/logo2.png" alt=""></div>
+                    <div class="about-img"><img src="/public/images/logo2.png" alt=""></div>
                     <div class="about-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et
                         accusam et justo duo dlores et ea rebum magna text ar koto din.
@@ -450,7 +450,7 @@ PublicAsset::register($this);
                                             magna aliquyam eratma</p>
                                     </div>
                                     <div class="author-id">
-                                        <img src="assets/images/author.png" alt="">
+                                        <img src="/public/images/author.png" alt="">
 
                                         <div class="author-text">
                                             <h4>Sophia</h4>
@@ -469,7 +469,7 @@ PublicAsset::register($this);
                                             magna aliquyam eratma</p>
                                     </div>
                                     <div class="author-id">
-                                        <img src="assets/images/author.png" alt="">
+                                        <img src="/public/images/author.png" alt="">
 
                                         <div class="author-text">
                                             <h4>Sophia</h4>
@@ -488,7 +488,7 @@ PublicAsset::register($this);
                                             magna aliquyam eratma</p>
                                     </div>
                                     <div class="author-id">
-                                        <img src="assets/images/author.png" alt="">
+                                        <img src="/public/images/author.png" alt="">
 
                                         <div class="author-text">
                                             <h4>Sophia</h4>
@@ -510,7 +510,7 @@ PublicAsset::register($this);
 
                     <div class="custom-post">
                         <div>
-                            <a href="#"><img src="assets/images/footer-img.png" alt=""></a>
+                            <a href="#"><img src="/public/images/footer-img.png" alt=""></a>
                         </div>
                         <div>
                             <a href="#" class="text-uppercase">Home is peaceful Place</a>
