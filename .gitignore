@@ -35,5 +35,3 @@ tests/_support/_generated
 /log
 
 .composer.lock
-
-config/db.php
