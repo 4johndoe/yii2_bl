@@ -1,4 +1,5 @@
 <?php
+use yii\helpers\Url;
 use yii\widgets\LinkPager;
 ?>
 <!--main content start-->
@@ -9,9 +10,9 @@ use yii\widgets\LinkPager;
                 <?php foreach($articles as $article): ?>
                 <article class="post">
                     <div class="post-thumb">
-                        <a href="blog.html"><img src="<?= $article->getImage() ?>" alt=""></a>
+                        <a href="<?= Url::toRoute(['site/view', 'id' => $article->id]); ?>"><img src="<?= $article->getImage() ?>" alt=""></a>
 
-                        <a href="blog.html" class="post-thumb-overlay text-center">
+                        <a href="<?= Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="post-thumb-overlay text-center">
                             <div class="text-uppercase text-center">View Post</div>
                         </a>
                     </div>
@@ -19,7 +20,7 @@ use yii\widgets\LinkPager;
                         <header class="entry-header text-center text-uppercase">
                             <h6><a href="#"> <?= $article->category->title; ?></a></h6>
 
-                            <h1 class="entry-title"><a href="blog.html"><?= $article->title ?></a></h1>
+                            <h1 class="entry-title"><a href="<?= Url::toRoute(['site/view', 'id' => $article->id]); ?>"><?= $article->title ?></a></h1>
 
 
                         </header>
@@ -27,11 +28,11 @@ use yii\widgets\LinkPager;
                             <p><?= $article->description ?></p>
 
                             <div class="btn-continue-reading text-center text-uppercase">
-                                <a href="blog.html" class="more-link">Continue Reading</a>
+                                <a href="<?= Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="more-link">Continue Reading</a>
                             </div>
                         </div>
                         <div class="social-share">
-                            <span class="social-share-title pull-left text-capitalize">By <a href="#">Rubel</a> <?= $article->date ?></span>
+                            <span class="social-share-title pull-left text-capitalize">By <a href="#">Rubel</a> <?= $article->getDate() ?></span>
                             <ul class="text-center pull-right">
                                 <li><a class="s-facebook" href="#"><i class="fa fa-eye"></i></a></li><?= $article->viewed ?>
                             </ul>
@@ -56,14 +57,14 @@ use yii\widgets\LinkPager;
                         <div class="popular-post">
 
 
-                            <a href="#" class="popular-img"><img src="<?= $article->getImage(); ?>" alt="">
+                            <a href="<?= Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="popular-img"><img src="<?= $article->getImage(); ?>" alt="">
 
                                 <div class="p-overlay"></div>
                             </a>
 
                             <div class="p-content">
-                                <a href="#" class="text-uppercase"><?= $article->title ?></a>
-                                <span class="p-date"><?= $article->date ?></span>
+                                <a href="<?= Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="text-uppercase"><?= $article->title ?></a>
+                                <span class="p-date"><?= $article->getDate() ?></span>
 
                             </div>
                         </div>
@@ -76,13 +77,13 @@ use yii\widgets\LinkPager;
                             <div class="thumb-latest-posts">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="#" class="popular-img"><img src="<?= $article->getImage() ?>" alt="">
+                                        <a href="<?= Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="popular-img"><img src="<?= $article->getImage() ?>" alt="">
                                             <div class="p-overlay"></div>
                                         </a>
                                     </div>
                                     <div class="p-content">
-                                        <a href="#" class="text-uppercase"><?= $article->title ?></a>
-                                        <span class="p-date"><?= $article->date ?></span>
+                                        <a href="<?= Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="text-uppercase"><?= $article->title ?></a>
+                                        <span class="p-date"><?= $article->getDate(); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -91,30 +92,12 @@ use yii\widgets\LinkPager;
                     <aside class="widget border pos-padding">
                         <h3 class="widget-title text-uppercase text-center">Categories</h3>
                         <ul>
-                            <li>
-                                <a href="#">Food & Drinks</a>
-                                <span class="post-count pull-right"> (2)</span>
-                            </li>
-                            <li>
-                                <a href="#">Travel</a>
-                                <span class="post-count pull-right"> (2)</span>
-                            </li>
-                            <li>
-                                <a href="#">Business</a>
-                                <span class="post-count pull-right"> (2)</span>
-                            </li>
-                            <li>
-                                <a href="#">Story</a>
-                                <span class="post-count pull-right"> (2)</span>
-                            </li>
-                            <li>
-                                <a href="#">DIY & Tips</a>
-                                <span class="post-count pull-right"> (2)</span>
-                            </li>
-                            <li>
-                                <a href="#">Lifestyle</a>
-                                <span class="post-count pull-right"> (2)</span>
-                            </li>
+                            <?php foreach($categories as $category): ?>
+                                <li>
+                                    <a href="#"><?= $category->title ?></a>
+                                    <span class="post-count pull-right"> (<?= $category->getArticlesCount(); ?>)</span>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                     </aside>
                 </div>
