@@ -5,13 +5,13 @@
             <div class="col-md-8">
                 <article class="post">
                     <div class="post-thumb">
-                        <a href="blog.html"><img src="/public/images/blog-1.jpg" alt=""></a>
+                        <a href="blog.html"><img src="<?= $article->getImage(); ?>" alt=""></a>
                     </div>
                     <div class="post-content">
                         <header class="entry-header text-center text-uppercase">
-                            <h6><a href="#"> Travel</a></h6>
+                            <h6><a href="#"> <?= $article->category->title ?></a></h6>
 
-                            <h1 class="entry-title"><a href="blog.html">Home is peaceful place</a></h1>
+                            <h1 class="entry-title"><a href="blog.html"><?= $article->title ?></a></h1>
 
 
                         </header>

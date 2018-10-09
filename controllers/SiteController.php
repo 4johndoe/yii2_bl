@@ -81,9 +81,12 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionView()
+    public function actionView($id)
     {
-        return $this->render('single');
+        $article = Article::findOne($id);
+        return $this->render('single', [
+            'article' => $article
+        ]);
     }
 
     public function actionCategory()
