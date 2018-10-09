@@ -16,67 +16,8 @@
 
                         </header>
                         <div class="entry-content">
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                tevidulabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                justo duo dolores rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                                ipsum dolor sit am Lorem ipsum dolor sitconsetetur sadipscing elitr, sed diam nonumy
-                                eirmod tempor invidunt ut labore et dolore maliquyam erat, sed diam voluptua.
-                            </p>
-
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                                voluptua. At vero eos et accusam.
-                            </p>
-
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                                voluptua. At vero eos et accusam.
-                            </p>
-
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                                voluptua. At vero eos et accusam.
-                            </p>
-
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                                voluptua. At vero eos et accusam.
-                            </p>
-
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                                voluptua. At vero eos et accusam.
-                            </p>
-
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                                voluptua. At vero eos et accusam.
-                            </p>
-
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                                voluptua. At vero eos et accusam.
+                            <p>
+                                <?= $article->content ?>
                             </p>
                         </div>
                         <div class="decoration">
@@ -86,7 +27,7 @@
 
                         <div class="social-share">
 							<span
-                                class="social-share-title pull-left text-capitalize">By Rubel On February 12, 2016</span>
+                                class="social-share-title pull-left text-capitalize">By Rubel On <?= $article->getDate() ?></span>
                             <ul class="text-center pull-right">
                                 <li><a class="s-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a class="s-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -223,25 +164,7 @@
 
                 <div class="leave-comment"><!--leave comment-->
                     <h4>Leave a reply</h4>
-
-
                     <form class="form-horizontal contact-form" role="form" method="post" action="#">
-                        <div class="form-group">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" id="email" name="email"
-                                       placeholder="Email">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" id="subject" name="subject"
-                                       placeholder="Website url">
-                            </div>
-                        </div>
                         <div class="form-group">
                             <div class="col-md-12">
 										<textarea class="form-control" rows="6" name="message"
