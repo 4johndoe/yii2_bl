@@ -84,8 +84,12 @@ class SiteController extends Controller
     public function actionView($id)
     {
         $article = Article::findOne($id);
+
+        $popular = Article::getPopular();
+
         return $this->render('single', [
-            'article' => $article
+            'article' => $article,
+            'popular' => $popular
         ]);
     }
 
