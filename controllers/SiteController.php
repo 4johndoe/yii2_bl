@@ -99,9 +99,19 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionCategory()
+    public function actionCategory($id)
     {
-        return $this->render('category');
+        $query = Article::find()->where(['category_id' => $id]);
+        $countQuery = clone $query;
+        $pagination = new Pagination(['totalCount' => $countQuery->count(), 'pageSize'=> 6]);
+        $articles = $query->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        return $this->render('category', [
+            'articles' => $articles,
+            'pagination' => $pagination
+        ]);
     }
 
     /**
