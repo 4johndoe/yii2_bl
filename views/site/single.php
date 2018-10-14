@@ -15,7 +15,7 @@ use yii\widgets\LinkPager;
                         <header class="entry-header text-center text-uppercase">
                             <h6><a href="<?= Url::toRoute(['site/category', 'id' => $article->category->id]) ?>"> <?= $article->category->title ?></a></h6>
 
-                            <h1 class="entry-title"><a href="blog.html"><?= $article->title ?></a></h1>
+                            <h1 class="entry-title"><a href="<?= Url::toRoute(['site/view', 'id' => $article->id]) ?>"><?= $article->title ?></a></h1>
 
 
                         </header>
@@ -179,13 +179,12 @@ use yii\widgets\LinkPager;
                     </form>
                 </div><!--end leave comment-->
             </div>
-            <div class="col-md-4" data-sticky_column>
-                <div class="primary-sidebar">
 
-                    <aside class="widget">
-                        <h3 class="widget-title text-uppercase text-center">Popular Posts</h3>
-                        <?php foreach($popular as $article): ?>
-                            <div class="popular-post">
+            <?= $this->render('/partials/sidebar', [
+                'popular' => $popular,
+                'recent' => $recent,
+                'categories' => $categories
+            ]) ?>
 
 
                                 <a href="<?= Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="popular-img"><img src="<?= $article->getImage(); ?>" alt="">
