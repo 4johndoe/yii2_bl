@@ -89,10 +89,13 @@ class SiteController extends Controller
 
         $recent = Article::getRecent();
 
+        $categories = Category::getAll();
+
         return $this->render('single', [
             'article' => $article,
             'popular' => $popular,
-            'recent' => $recent
+            'recent' => $recent,
+            'categories' => $categories
         ]);
     }
 
