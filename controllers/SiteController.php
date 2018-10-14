@@ -101,16 +101,20 @@ class SiteController extends Controller
 
     public function actionCategory($id)
     {
-        $query = Article::find()->where(['category_id' => $id]);
-        $countQuery = clone $query;
-        $pagination = new Pagination(['totalCount' => $countQuery->count(), 'pageSize'=> 6]);
-        $articles = $query->offset($pagination->offset)
-            ->limit($pagination->limit)
-            ->all();
+        $data = Category::getArticlesByCategory($id);
+
+        $popular = Article::getPopular();
+
+        $recent = Article::getRecent();
+
+        $categories = Category::getAll();
 
         return $this->render('category', [
-            'articles' => $articles,
-            'pagination' => $pagination
+            'articles' => $data['articles'],
+            'pagination' => $data['pagination'],
+            'popular' => $popular,
+            'recent' => $recent,
+            'categories' => $categories
         ]);
     }
 
