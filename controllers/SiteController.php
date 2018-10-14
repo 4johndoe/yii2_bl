@@ -87,9 +87,12 @@ class SiteController extends Controller
 
         $popular = Article::getPopular();
 
+        $recent = Article::getRecent();
+
         return $this->render('single', [
             'article' => $article,
-            'popular' => $popular
+            'popular' => $popular,
+            'recent' => $recent
         ]);
     }
 
