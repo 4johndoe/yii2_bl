@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 
+use app\models\User;
 use Yii;
 use yii\web\Controller;
 
@@ -44,6 +45,10 @@ class AuthController extends Controller
 
     public function actionTest()
     {
-        var_dump(Yii::$app->components);
+        $user = User::findOne(1);
+
+        Yii::$app->user->login($user);
+
+        var_dump(Yii::$app->user->isGuest);
     }
 }
