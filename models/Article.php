@@ -173,4 +173,9 @@ class Article extends \yii\db\ActiveRecord
         $this->user_id = Yii::$app->user->id;
         return $this->save();
     }
+
+    public function getComments()
+    {
+        return $this->hasMany(Comment::className(), ['article_id' => 'id']);
+    }
 }
