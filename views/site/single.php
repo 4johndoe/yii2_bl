@@ -188,7 +188,7 @@ use yii\helpers\Url;
                                 ]); ?>
                             </div>
                         </div>
-                        <a href="#" class="btn send-btn">Post Comment</a>
+                        <button  class="btn send-btn">Post Comment</button>
 
                     <?php \yii\widgets\ActiveForm::end(); ?>
 
