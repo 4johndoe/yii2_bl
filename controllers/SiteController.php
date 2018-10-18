@@ -144,6 +144,21 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionComment($id)
+    {
+        $model = new CommentForm();
+
+        if (Yii::$app->request->isPost)
+        {
+            $model->load(Yii::$app->request->post());
+
+            if ($model->saveComment($id))
+            {
+                return $this->redirect(['site/view', 'id' => $id]);
+            }
+        }
+    }
+
     /**
      * Displays about page.
      *
