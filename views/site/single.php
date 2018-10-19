@@ -185,7 +185,7 @@ use yii\helpers\Url;
                                 <?= $form->field($commentForm, 'comment')->textarea([
                                     'class' => 'form-control',
                                     'placeholder' => 'Write Message'
-                                ]); ?>
+                                ])->label(false); ?>
                             </div>
                         </div>
                         <button  class="btn send-btn">Post Comment</button>
